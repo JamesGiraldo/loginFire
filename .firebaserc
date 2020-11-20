@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-angular-25019": {
+      "hosting": {
+        "loginFire": [
+          "login-angular-25019"
+        ]
+      }
+    }
+  }
+}

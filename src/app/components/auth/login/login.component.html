@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card tarjetas jumbotron animated fadeIn fast">
+            <div class="card-body">
+                <h2 class="text-center">LOGIN</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password" required />
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block"> Login </button>
+                </form>
+                <div class="form-group mt-3">
+                    <p>
+                        Crea una cuenta ? <a class="irRegister" (click)="irRegister()"> Registrar </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
