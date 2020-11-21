@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,11 @@ export class AuthService {
       );
       return result;
     } catch (error) {
-      alert('Problemas al iniciar sesión');
+      Swal.fire({
+        title: 'Problemas con la grabación.',
+        text: 'Por favor, ingrese de nuevo.',
+        icon: 'warning'
+      });
       console.log(error);
     }
   }
@@ -32,7 +37,11 @@ export class AuthService {
       );
       return result;
     } catch (error) {
-      alert('Problemas al registrar');
+      Swal.fire({
+        title: 'Problemas con la grabación.',
+        text: 'Por favor, ingrese nuevamente los datos.',
+        icon: 'warning'
+      });
       console.log(error);
     }
   }
@@ -46,7 +55,7 @@ export class AuthService {
   }
   getCurrentUser(){
     try {
-      return this.afAuth.authState.pipe(first()).toPromise(); 
+      return this.afAuth.authState.pipe(first()).toPromise();
     } catch (error) {
       console.log(error);
     }

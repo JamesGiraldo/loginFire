@@ -7,8 +7,8 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'loginFire';
-  constructor( public auth: AuthService ){
+  title = 'loginFire-James-Giraldo';
+  constructor( private authSvc: AuthService ){
 
   }
 }

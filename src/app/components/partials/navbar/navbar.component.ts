@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -32,6 +33,12 @@ export class NavbarComponent implements OnInit {
     try {
       await this.authSvc.logout();
       this.router.navigate( ['login'] );
+      Swal.fire({
+        title: '¡Adiós!',
+        text: 'Te esperamos pronto.',
+        icon: 'warning',
+        confirmButtonText: 'Ok'
+      });
     } catch (error) {
       console.log(error);
     }

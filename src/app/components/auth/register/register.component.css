@@ -1,4 +1,12 @@
-.irLogin{
-  color: blue !important;
-  cursor: pointer;
+.irLogin {
+    color: blue !important;
+    cursor: pointer;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.error {
+    color: #a46060 !important;
 }
